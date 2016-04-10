@@ -1,0 +1,25 @@
+%h1 Listing question_selections
+
+%table
+  %thead
+    %tr
+      %th Question
+      %th Quiz
+      %th Display t or f
+      %th
+      %th
+      %th
+
+  %tbody
+    - @question_selections.each do |question_selection|
+      %tr
+        %td= question_selection.question_id
+        %td= question_selection.quiz_id
+        %td= question_selection.display_t_or_f
+        %td= link_to 'Show', question_selection
+        %td= link_to 'Edit', edit_question_selection_path(question_selection)
+        %td= link_to 'Destroy', question_selection, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Question selection', new_question_selection_path

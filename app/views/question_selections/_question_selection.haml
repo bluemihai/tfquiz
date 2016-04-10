@@ -1,0 +1,11 @@
+- qs = question_selection
+%button.question-box
+  = "#{question_selection_counter + 1})"
+  = qs.present_random
+.panel
+  = qs.answer_key
+  = link_to '[Edit Question]', edit_question_path(qs.question)
+  - if qs.question.public_comments && qs.question.public_comments != ''
+    %br
+    = qs.question.public_comments 
+%br

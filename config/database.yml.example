@@ -1,0 +1,19 @@
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: tfquiz_development
+  pool:     5
+  username: your-username
+  password: your-password
+  template: template0
+
+test:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: tfquiz_test
+  pool:     5
+  username: your-username
+  password: your-password
+  template: template0

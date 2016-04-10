@@ -1,0 +1,50 @@
+// Place all the styles related to the questions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.questions {
+  padding: 10px;
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+  width: 900px;
+}
+
+.question-box {
+  border: 1px solid red;
+  cursor: pointer;
+  background-color: white;
+  -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+                 break-inside: avoid;
+  padding: 5px;
+  margin-bottom: 10px;
+  color: blue;
+  font-size: 80%;
+  transition: 0.4s;
+  a {
+    text-decoration: none;
+  }
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.question-box.active, button.question-box:hover {
+    background-color: yellow;
+}
+
+/* Style the question-box panel. Note: hidden by default */
+div.panel {
+    padding: 0 18px;
+    display: none;
+    font-size: 80%;
+}
+
+/* The "show" class is added to the question-box panel when the user clicks on one of the buttons. This will show the panel content */
+div.panel.show {
+    display: block !important;
+}
+
+.questions-frame {
+  height: 300px;
+  overflow-y: scroll;
+}

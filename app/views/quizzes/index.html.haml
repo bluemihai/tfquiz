@@ -1,0 +1,29 @@
+
+- if @quizzes.length && @quizzes.length > 0
+  %h3= "#{current_user ? current_user.name + '\'s' : 'Anonymous'} Quizzes"
+  %table
+    %thead
+      %tr
+        %th ID
+        %th
+        %th Name
+        %th Custom
+        %th Questions
+        %th
+        %th
+    %tbody
+      - @quizzes.each do |quiz|
+        %tr
+          %td= quiz.id
+          %td= button_to 'Take', quiz, method: 'get'
+          %td= quiz.name
+          %td= quiz.custom ? 'T' : 'F'
+          %td= quiz.questions.map(&:id)
+          %td= button_to 'Edit/Refresh', edit_quiz_path(quiz), method: 'get'
+          %td= button_to 'Destroy', quiz, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%hr
+
+%h3 New Quiz
+
+= render 'form'

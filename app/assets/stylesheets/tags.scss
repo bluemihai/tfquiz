@@ -1,0 +1,34 @@
+// Place all the styles related to the tags controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tag-box {
+  background-color: white;
+  border: 1px solid green;
+  width: 160px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  float: left;
+  margin: 5px;
+  font-size: 90%;
+  a {
+    text-decoration: none;
+  }
+}
+
+.tags {
+  display: table-cell;
+  min-width: 180px;
+}
+
+.rest-of-question-form {
+  display: table-cell;
+}
+
+.tags-in-table {
+  font-size: 80%;
+  a {
+    text-decoration: none;
+  }
+}

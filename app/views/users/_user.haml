@@ -1,0 +1,10 @@
+%td
+  = link_to user.name, user
+%td
+  = form_for(user) do |f|
+    = f.select(:role, User.roles.keys.map {|role| [role.titleize,role]})
+    = f.submit 'Change Role', :class => 'button-xs'
+%td
+  = link_to 'Edit', edit_user_path(user)
+  \|
+  = link_to('Delete', user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs')

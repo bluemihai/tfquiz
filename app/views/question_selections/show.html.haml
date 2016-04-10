@@ -1,0 +1,16 @@
+- if notice
+  %p#notice= notice
+
+%p
+  %b Question:
+  = @question_selection.question_id
+%p
+  %b Quiz:
+  = @question_selection.quiz_id
+%p
+  %b Display t or f:
+  = @question_selection.display_t_or_f
+
+= link_to 'Edit', edit_question_selection_path(@question_selection)
+\|
+= link_to 'Back', question_selections_path

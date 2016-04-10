@@ -1,0 +1,7 @@
+= simple_form_for(@tag) do |f|
+  = f.error_notification
+
+  = f.input :name, label: false, autofocus: true
+  = f.association :questions, as: :check_boxes, label_method: :f
+
+  .form-actions= f.button :submit, 'Save'

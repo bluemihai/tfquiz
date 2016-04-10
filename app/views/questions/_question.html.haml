@@ -1,0 +1,13 @@
+%button.question-box
+  = "#{question_counter + 1})"
+  = question.present_random
+.panel
+  = question.answer_key
+  = link_to 'Edit', edit_question_path(question)
+  %br
+  = question.other_version
+  %br
+  = "Tags: #{question.tag_names}. "
+  %br
+  = question.public_comments if question.public_comments && question.public_comments != ''
+%br

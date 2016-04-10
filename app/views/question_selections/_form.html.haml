@@ -1,0 +1,10 @@
+= simple_form_for(@question_selection) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :question_id
+    = f.input :quiz_id
+    = f.input :display_t_or_f
+
+  .form-actions
+    = f.button :submit

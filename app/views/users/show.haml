@@ -1,0 +1,10 @@
+= @user.inspect
+
+%h3 User
+- if @user.name
+  Name: 
+  = @user.name
+
+%hr
+
+= link_to 'Edit', edit_user_path(@user)

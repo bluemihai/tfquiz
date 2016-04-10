@@ -1,0 +1,9 @@
+%h1 Editing Tag
+
+= render 'form_with_question_checkboxes'
+
+%br
+
+%table
+  %td= button_to 'Show', @tag, method: :get
+  %td= button_to 'Destroy', @tag, method: :delete, data: { confirm: 'Are you sure?' }

@@ -1,0 +1,33 @@
+%h3 Questions
+
+.questions-frame
+  %table
+    %thead
+      %tr
+        %th ID
+        %th Tags
+        %th True Version
+        %th False Version
+        / %th Active
+        / %th Comments
+        %th
+        %th
+        %th
+
+    %tbody
+      - @questions.each do |question|
+        %tr
+          %td= question.id
+          %td.tags-in-table= question.tag_names
+          %td.question-box= question.t
+          %td.question-box= question.f
+          / %td= question.active ? 'T' : 'F'
+          / %td= question.public_comments
+          %td= link_to 'Show', question
+          %td= link_to 'Edit', edit_question_path(question)
+          %td= link_to 'Destroy', question, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%hr
+
+%h3 New Question
+= render 'form'

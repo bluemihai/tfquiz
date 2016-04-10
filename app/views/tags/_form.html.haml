@@ -1,0 +1,7 @@
+= simple_form_for(@tag) do |f|
+  = f.error_notification
+
+  %table
+    %td name:
+    %td= f.input :name, label: false, autofocus: true
+    %td.form-actions= f.button :submit, 'Save'

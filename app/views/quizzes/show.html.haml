@@ -1,0 +1,20 @@
+= render @quiz.tags
+.clear-both
+
+- if @quiz.user
+  %h3= "#{@quiz.user.name}'s Quiz on #{@quiz.tag_names}"
+- else
+  %h3= "Anonymous Quiz on #{@quiz.tag_names}"
+
+- if notice
+  %p#notice= notice
+
+%br
+
+= render @quiz.question_selections
+
+.clear-both
+
+= link_to 'Edit', edit_quiz_path(@quiz)
+\|
+= link_to 'Back', quizzes_path

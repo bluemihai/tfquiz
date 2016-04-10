@@ -1,0 +1,22 @@
+= button_to 'Edit', edit_question_path(@question), method: 'get'
+
+= render @question.tags
+
+.clear-both
+
+%p
+  %b T:
+  = @question.t
+%p
+  %b F:
+  = @question.f
+%p
+  %b Domain:
+  = @question.domain
+%p
+  %b Comments:
+  = @question.public_comments
+%p
+  %b Active:
+  = @question.active
+

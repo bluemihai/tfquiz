@@ -1,0 +1,15 @@
+= simple_form_for(@question) do |f|
+  = f.error_notification
+
+  .form-inputs
+    .tags
+      = f.association :tags, as: :check_boxes
+    .rest-of-question-form
+      = f.input :t, label: 'True Version', input_html: { rows: 5, cols: 60}, autofocus: true
+      = f.input :f, label: 'False Version', input_html: { rows: 5, cols: 60}
+      = f.input :public_comments, input_html: { rows: 5, cols: 60}
+      .admin-only= f.input :private_comments, input_html: { rows: 5, cols: 60} if current_user.admin?
+
+  %br
+  .form-actions
+    = f.button :submit, 'Save'
