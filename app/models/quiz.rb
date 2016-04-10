@@ -11,7 +11,7 @@ class Quiz < ApplicationRecord
 
   def tag_names
     return 'no tags yet' unless tags.length && tags.length > 0
-    tags.map(&:name).join(', ')
+    tags.map(&:name).sort.join(', ')
   end
 
   def is_smart_quiz?
@@ -20,8 +20,15 @@ class Quiz < ApplicationRecord
 
   def regenerate_questions
     return false unless is_smart_quiz?
-    question_pool = Question.by_tags(tags)
-    questions.clear << question_pool.first(question_count)
+    return false unless tags.length > 0
+    unused_pool = Question.by_tags(tags) - questions
+    if unused_pool.length >= question_count
+      questions.clear << unused_pool.first(question_count).shuffle
+    else
+      how_many_more = question_count - unused_pool.length
+      pool = unused_pool += questions.shuffle.first(how_many_more)
+      questions.clear << pool.first(question_count)
+    end
   end
 
   def randomize_tf

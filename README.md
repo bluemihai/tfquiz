@@ -4,15 +4,11 @@ TRUE/FALSE SELF-QUIZ
 
 Issues
 ------
-If you have a bug report or feature request, please submit an issue in Github.
+If you have a bug report or feature request, please submit an issue here in Github.
 
 Getting Started
 ---------------
-This application requires:
-
-- Ruby 2.2.3
-- Rails 5.0.0.beta3
-- Postgres
+This application requires Ruby 2.2.3, Rails 5.0.0.beta3 and Postgres
 
 * Rename database.yml.example to database.yml and fill it out
 * Rename application.yml.example to application.yml and fill it out.
@@ -21,12 +17,13 @@ This application requires:
     * Set Authorization callback URL to http://localhost:3000/auth/github/callback
 
 
-Contributing
-------------
+Contributing Content
+--------------------
 
-Please do!  Like using this app and don't love everything about it?  Get in the kitchen and improve it.
+Please do!  If you use this app, think of ways to improve it, then do it.
+You can contribute by either writing questions, or writing code.
 
-You can contribute by either writing questions, or writing code.  For the latter
+For the latter...
 
 * Pick a story from our [Trello board backlog](https://trello.com/b/wgbIjbj1/tf-quiz) - ask bluemihai for access
 * Create a new branch with a descriptive name
@@ -41,7 +38,7 @@ You can contribute by either writing questions, or writing code.  For the latter
 
 Credits
 -------
-Contributors: Mihai Banulescu.
+Contributors: Mihai Banulescu
 
 License
 -------
@@ -50,5 +47,5 @@ License
 
 Rails Apps Composer
 -------------------
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
+This application was scaffolded with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).  Thank you!

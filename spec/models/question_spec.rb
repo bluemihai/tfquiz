@@ -9,7 +9,6 @@ RSpec.describe Question, :type => :model do
 
   it 'Question#by_tags scope covers edge cases' do
     expect(Question.by_tags(nil)).to eq []
-    expect{Question.by_tags('string')}.to raise_error('Expecting an array')
   end
 
   it 'Question#by_tags scope works' do

@@ -9,7 +9,6 @@ class Question < ApplicationRecord
 
   def self.by_tags(given_tags)
     return [] if given_tags.nil?
-    raise 'Expecting an array' unless given_tags.is_a? Array
     given_tags.map(&:questions).flatten.uniq
   end
 
