@@ -59,7 +59,7 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params.require(:question).permit(:t, :f, :domain, :public_comments, :private_comments, 
-        :active, :inspired_by, tag_ids: [])
+      params.require(:question).permit(:t, :f, :domain, :public_comments,
+        :private_comments, :active, :inspired_by, tag_ids: [])
     end
 end
