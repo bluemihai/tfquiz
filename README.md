@@ -11,19 +11,27 @@ Getting Started
 This application requires Ruby 2.2.3, Rails 5.0.0.beta3 and Postgres
 
 * Rename database.yml.example to database.yml and fill it out
+  * Make sure you have Postgres installed on your machine!
+  * Use Postgres.app or brew install postgres (as opposed to your system default)
 * Rename application.yml.example to application.yml and fill it out.
   * We are not currently emailing users, so don't worry about GMAIL_USERNAME
   * Create your own [local Github auth app](https://github.com/settings/applications/new)
     * Set Authorization callback URL to http://localhost:3000/auth/github/callback
+* bundle install
+* bundle exec rails s
 
 
 Contributing Content
 --------------------
 
-Please do!  If you use this app, think of ways to improve it, then do it.
-You can contribute by either writing questions, or writing code.
+We would love lots of questions; please write one!  Give it some tags.
+No question is a bad question.  At the very least, it will start up a conversation!
 
-For the latter...
+
+Contributing Code
+-----------------
+If you use this app and can think of ways to improve it, then do it.
+You can contribute by either writing questions, or writing code.
 
 * Pick a story from our [Trello board backlog](https://trello.com/b/wgbIjbj1/tf-quiz) - ask bluemihai for access
 * Create a new branch with a descriptive name
