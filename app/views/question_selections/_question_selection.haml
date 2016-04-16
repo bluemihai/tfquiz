@@ -2,6 +2,8 @@
 %button.question-box
   = "#{question_selection_counter + 1})"
   = qs.present_random
+  = simple_form_for(qs) do |f|
+    .right= f.input :current_answer, collection: [['T', true], ['F', false]], as: :radio_buttons, boolean_style: :inline, label: false
 .panel
   = qs.answer_key
   = link_to '[Edit Question]', edit_question_path(qs.question)

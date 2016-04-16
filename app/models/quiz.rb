@@ -1,6 +1,6 @@
 class Quiz < ApplicationRecord
   belongs_to :user, required: false
-  has_many :question_selections
+  has_many :question_selections, dependent: :destroy
   has_many :questions, through: :question_selections
   has_and_belongs_to_many :tags
 

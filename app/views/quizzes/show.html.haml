@@ -4,7 +4,13 @@
 - if @quiz.user
   %h3= "#{@quiz.user.name}'s Quiz on #{@quiz.tag_names}"
 - else
-  %h3= "Anonymous Quiz on #{@quiz.tag_names}"
+  %h3
+    = "Anonymous Quiz on #{@quiz.tag_names}"
+    (
+    %span#trues 0
+    \/
+    %span#selections 0
+    )
 
 - if notice
   %p#notice= notice

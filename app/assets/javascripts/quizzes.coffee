@@ -1,3 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  $("[type=radio]").change ->
+    selections = (item.value for item in $( "[type=radio]:checked" ))
+    trues = (item for item in selections when item == 'true')
+    console.log(selections.length, trues.length)
+    $('#trues').html(trues.length)
+    $('#selections').html(selections.length)
