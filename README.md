@@ -55,5 +55,5 @@ License
 
 Rails Apps Composer
 -------------------
-This application was scaffolded with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
+This application was initially scaffolded with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).  Thank you!

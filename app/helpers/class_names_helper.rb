@@ -1,0 +1,2 @@
+module ClassNamesHelper
+end

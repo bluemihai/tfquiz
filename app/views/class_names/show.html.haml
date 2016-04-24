@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @class_name.name
+%p
+  %b Group:
+  = @class_name.group
+%p
+  %b Attributez:
+  = @class_name.attributez
+%p
+  %b Methodz:
+  = @class_name.methodz
+
+= link_to 'Edit', edit_class_name_path(@class_name)
+\|
+= link_to 'Back', class_names_path

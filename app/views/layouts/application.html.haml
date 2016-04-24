@@ -13,4 +13,6 @@
     %main{:role => "main"}
       = render 'layouts/messages'
       = yield
+      .line-break
+      %h4 Debugging...
       = params.inspect if Rails.env.development?
