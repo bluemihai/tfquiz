@@ -1,10 +1,13 @@
 TRUE/FALSE SELF-QUIZ
 ====================
 
+About
+-----
+Designed to provide short feedback loops for learning programming concepts.
 
 Issues
 ------
-If you have a bug report or feature request, please submit an issue here in Github.
+Bug report or feature request?  Please submit an issue here in Github.
 
 Getting Started
 ---------------
@@ -26,9 +29,8 @@ Schema
 
 Contributing Content
 --------------------
-
-We would love lots of questions; please write one!  Give it some tags.
-No question is a bad question.  At the very least, it will start up a conversation!
+* We would love lots of questions; please write one!  Give it some tags.
+* No question is a bad question.  At the very least, it will start up a conversation!
 
 
 Contributing Code
@@ -49,7 +51,7 @@ You can contribute by either writing questions, or writing code.
 
 Credits
 -------
-Contributors: Mihai Banulescu
+Contributors: bluemihai, ...
 
 License
 -------
