@@ -20,6 +20,9 @@ This application requires Ruby 2.2.3, Rails 5.0.0.beta3 and Postgres
 * bundle install
 * bundle exec rails s
 
+Schema
+------
+[Schema](./docs/schema.png)
 
 Contributing Content
 --------------------
