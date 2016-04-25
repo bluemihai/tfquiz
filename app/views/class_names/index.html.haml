@@ -12,33 +12,14 @@ Just refresh the page for new relationships.  Enjoy!
   %thead
     %tr
       / %th
-      %th.right Name
+      %th.right Self
       %th.left Other
-      %th Relationship
+      %th.left Could use...
+      %th.left ...to model this Real-Life-Object Relationship
+      %th
 
   %tbody
-    - @class_names.each do |class_name|
-      %tr
-        / %td= class_name_counter
-        %td.right= class_name.name
-        %td= class_name.other.name
-        %td.input.select.optional.user_role
-          %select#user_role.select.optional{:name => "user[role]"}
-            %option{:value => ""}
-            %option{:value => "inheritance"}= "#{class_name.name} is a #{class_name.other.name} —  Inheritance!"
-            %option{:value => "inheritance"}= "#{class_name.other.name} is a #{class_name.name} —  Inheritance!"
-            %option{:value => "inheritance"}= "#{class_name.other.name} and #{class_name.name} are both some other obvious Thing — Inheritance?"
-            %option{:value => "composition"}= "#{class_name.name} has a #{class_name.other.name} — Composition!"
-            %option{:value => "composition"}= "#{class_name.name} has many #{class_name.other.name.pluralize} — Composition!"
-            %option{:value => "composition"}= "#{class_name.other.name} has a #{class_name.name} — Composition!"
-            %option{:value => "composition"}= "#{class_name.other.name} has many #{class_name.name.pluralize} — Composition!"
-            %option{:value => "modules"}= "#{class_name.name} and #{class_name.other.name} share some behaviors — Modules!"
-            %option{:value => "modules"}= "Unrelated or unclear — Modules or Nothing?"
-        / %td= class_name.attributez
-        / %td= class_name.methodz
-        / %td= link_to 'Show', class_name
-        / %td= link_to 'Edit', edit_class_name_path(class_name)
-        / %td= link_to 'Destroy', class_name, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    = render @class_names
 
 %br
 

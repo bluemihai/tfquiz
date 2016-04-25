@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Primary:
+  = @class_relationship.primary_id
+%p
+  %b Secondary:
+  = @class_relationship.secondary_id
+%p
+  %b Class rel:
+  = @class_relationship.class_rel
+%p
+  %b Object rel:
+  = @class_relationship.object_rel
+
+= link_to 'Edit', edit_class_relationship_path(@class_relationship)
+\|
+= link_to 'Back', class_relationships_path

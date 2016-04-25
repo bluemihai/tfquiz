@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :class_relationships
   resources :class_names
   # get 'admin/index'
   # get '/admin' => 'admin#index'

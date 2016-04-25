@@ -1,0 +1,27 @@
+%h1 Listing class_relationships
+
+%table
+  %thead
+    %tr
+      %th Primary
+      %th Secondary
+      %th Class rel
+      %th Object rel
+      %th
+      %th
+      %th
+
+  %tbody
+    - @class_relationships.each do |class_relationship|
+      %tr
+        %td= class_relationship.primary_id
+        %td= class_relationship.secondary_id
+        %td= class_relationship.class_rel
+        %td= class_relationship.object_rel
+        %td= link_to 'Show', class_relationship
+        %td= link_to 'Edit', edit_class_relationship_path(class_relationship)
+        %td= link_to 'Destroy', class_relationship, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Class relationship', new_class_relationship_path

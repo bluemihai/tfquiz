@@ -5,7 +5,7 @@ development:
   database: tfquiz_development
   pool:     5
   username: your-username
-  password: your-password-always-git-ignore-this-file
+  password: your-password-always-git-ignore-database.yml
   template: template0
 
 test:
@@ -15,5 +15,5 @@ test:
   database: tfquiz_test
   pool:     5
   username: your-username
-  password: your-password-always-git-ignore-this-file
+  password: your-password-always-git-ignore-database.yml
   template: template0

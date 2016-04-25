@@ -1,0 +1,11 @@
+= simple_form_for(@class_relationship) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :primary_id
+    = f.input :secondary_id
+    = f.input :class_rel
+    = f.input :object_rel
+
+  .form-actions
+    = f.button :submit

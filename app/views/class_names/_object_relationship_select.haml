@@ -1,0 +1,17 @@
+%select.obj-rel
+  %option{:value => ""} [Choose the best fit]
+  %option{:value => "inheritance"}= "Every #{class_name.name} is a kind of #{class_name.other.name}"
+  %option{:value => "inheritance"}= "Every #{class_name.other.name} is a kind of #{class_name.name}"
+  %option{:value => "inheritance?"}
+    = "#{class_name.other.name} and #{class_name.name} are kinds of some other obvious Thing"
+  %option{:value => "composition"}
+    = "#{class_name.name} has (can have) a #{class_name.other.name}"
+  %option{:value => "composition"}
+    = "#{class_name.name} has (can have) many #{class_name.other.name.pluralize}"
+  %option{:value => "composition"}
+    = "#{class_name.other.name} has (can have) a #{class_name.name}"
+  %option{:value => "composition"}
+    = "#{class_name.other.name} has (can have) many #{class_name.name.pluralize}"
+  %option{:value => "modules"}
+    = "#{class_name.name} and #{class_name.other.name} share some attributes and behaviors"
+  %option{:value => "modules?"} Unrelated or unclear
