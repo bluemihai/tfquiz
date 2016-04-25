@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ClassName, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should respond_to(
+    :primary_class_relationships,
+    :secondary_class_relationships,
+    :secondary_rels,
+    :primary_rels
+  )}
 end
