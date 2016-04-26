@@ -3,7 +3,6 @@ class ClassRelationshipsController < ApplicationController
 
   def index
     @class_names = ClassName.all
-    @class_relationships = ClassRelationship.all
   end
 
   def show

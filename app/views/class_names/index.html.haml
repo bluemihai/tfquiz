@@ -8,26 +8,17 @@ Just refresh the page for new relationships.  Enjoy!
 
 %p
 
-- unless @class_relationships.empty?
-  = "#{ClassRelationship.count} ClassRelationships, #{ClassName.count} ClassNames"
-  %br
-  - by_primary = @class_relationships.group_by(&:primary_id)
-  = "by_primary.keys is #{by_primary.keys}"
-  %br
-  - by_secondary = @class_relationships.group_by(&:secondary_id)
-  = "by_secondary.keys is #{by_secondary.keys}"
-  %br
-  = "by_primary[by_primary.keys.first] is #{by_primary[by_primary.keys.first].pluck(:id)}"
+- unless @class_names.empty?
 
   %table
     %thead
       %tr
         / %th
-        %th.right Self
-        %th.left & Other
+        %th.right A
+        %th.left and B
         %th.left could use...
         %th
-        %th.left ...to model this real-life-object relationship
+        %th.left to model this real-life relationship
         %th
 
     %tbody

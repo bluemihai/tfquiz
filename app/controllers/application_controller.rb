@@ -6,8 +6,14 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :user_signed_in?
   helper_method :correct_user?
+  helper_method :class_relationships_hash
 
   private
+    def class_relationships_hash
+      @class_relationships_hash ||= ClassRelationship.all.group_by_recursive(
+        :primary_id, :secondary_id)
+    end
+
     def current_user
       begin
         @current_user ||= User.find(session[:user_id]) if session[:user_id]

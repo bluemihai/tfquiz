@@ -16,8 +16,7 @@
           %th.right= cn.name
           - @class_names.each_with_index do |cn, j|
             %td
-              - @cr = ClassRelationship.find_by(primary_id: i+1, secondary_id: j+1)
-              - if @cr
+              - if @cr = class_relationships_hash[i+1][j+1]
                 = simple_form_for(@cr, remote: true) do |f|
                   = token_tag
                   = f.input :class_rel, label: false, collection: ClassRelationship.labels_for_select, input_html: { onchange: "this.form.submit();"}              
