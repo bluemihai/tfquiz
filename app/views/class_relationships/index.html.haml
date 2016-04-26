@@ -2,6 +2,11 @@
   = ClassRelationship.count
   Class Relationships
 
+- ClassRelationship.grouped_by_class_rel.each do |k, v|
+  - k = 'none' if k.nil?
+  = "#{k.titleize}: #{v.size}"
+  %br
+
 .with-overflow
   %table
     %thead
@@ -16,7 +21,9 @@
           %th.right= cn.name
           - @class_names.each_with_index do |cn, j|
             %td
-              - if @cr = class_relationships_hash[i+1][j+1]
+              / - @cr = class_relationships_hash[i+1][j+1] TODO: finish refactor
+              - @cr = ClassRelationship.find_by(primary_id: i+1, secondary_id: j+1)
+              - if @cr
                 = simple_form_for(@cr, remote: true) do |f|
                   = token_tag
                   = f.input :class_rel, label: false, collection: ClassRelationship.labels_for_select, input_html: { onchange: "this.form.submit();"}              

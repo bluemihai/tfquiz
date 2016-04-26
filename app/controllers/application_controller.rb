@@ -10,8 +10,7 @@ class ApplicationController < ActionController::Base
 
   private
     def class_relationships_hash
-      @class_relationships_hash ||= ClassRelationship.all.group_by_recursive(
-        :primary_id, :secondary_id)
+      @class_relationships_hash ||= ClassRelationship.hashed
     end
 
     def current_user

@@ -1,6 +1,10 @@
 class ClassRelationship < ApplicationRecord
-  belongs_to :primary_class_name, class_name: 'ClassName', foreign_key: :secondary_id
-  belongs_to :secondary_class_name, class_name: 'ClassName', foreign_key: :primary_id
+  belongs_to :primary_class_name,
+    class_name: 'ClassName',
+    foreign_key: :secondary_id
+  belongs_to :secondary_class_name,
+    class_name: 'ClassName',
+    foreign_key: :primary_id
 
   enum class_rel: [:nothing, :inheritance, :modules, :composition]
 
@@ -20,4 +24,13 @@ class ClassRelationship < ApplicationRecord
       secondary_id: cn_id,
     )}
   end
+
+  def self.hashed
+    temp = all.group_by(&:primary_id)
+  end
+
+  def self.grouped_by_class_rel
+    all.group_by(&:class_rel)
+  end
+
 end
