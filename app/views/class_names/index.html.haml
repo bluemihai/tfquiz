@@ -8,19 +8,31 @@ Just refresh the page for new relationships.  Enjoy!
 
 %p
 
-%table
-  %thead
-    %tr
-      / %th
-      %th.right Self
-      %th.left Other
-      %th.left Could use...
-      %th.left ...to model this Real-Life-Object Relationship
-      %th
+- unless @class_relationships.empty?
+  = "#{ClassRelationship.count} ClassRelationships, #{ClassName.count} ClassNames"
+  %br
+  - by_primary = @class_relationships.group_by(&:primary_id)
+  = "by_primary.keys is #{by_primary.keys}"
+  %br
+  - by_secondary = @class_relationships.group_by(&:secondary_id)
+  = "by_secondary.keys is #{by_secondary.keys}"
+  %br
+  = "by_primary[by_primary.keys.first] is #{by_primary[by_primary.keys.first].pluck(:id)}"
 
-  %tbody
-    = render @class_names
+  %table
+    %thead
+      %tr
+        / %th
+        %th.right Self
+        %th.left & Other
+        %th.left could use...
+        %th
+        %th.left ...to model this real-life-object relationship
+        %th
 
-%br
+    %tbody
+      = render @class_names
 
-= link_to 'New Class Name', new_class_name_path
+  %br
+
+  = link_to 'New Class Name', new_class_name_path

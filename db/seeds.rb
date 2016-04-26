@@ -105,16 +105,15 @@
 # qs.each{ |q| Question.create(q) }
 
 [
-  'Dog',
-  'Cat',
-  'Animal',
-  'Person',
-  'House',
-  'Building',
-  'HighRise',
-  'CartoonCharacter',
-  'Room',
-  'Chair',
-  'Kitchen',
-  'Bulldog'
-].each{ |name| ClassName.create!(name: name) }
+  {name: 'Dog', group: 1},
+  {name: 'Bulldog', group: 1},
+  {name: 'Cat', group: 1},
+  {name: 'Animal', group: 1},
+  {name: 'Person', group: 1},
+  {name: 'House', group: 2},
+  {name: 'Building', group: 2},
+  {name: 'HighRise', group: 2},
+  {name: 'Room', group: 2},
+  {name: 'Chair', group: 2},
+  {name: 'Kitchen', group: 2}
+].each{ |args| ClassName.create!(args) }

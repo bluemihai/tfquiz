@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20160425184125) do
   create_table "class_relationships", force: :cascade do |t|
     t.integer  "primary_id"
     t.integer  "secondary_id"
-    t.integer  "class_rel",    default: 0
+    t.integer  "class_rel"
     t.integer  "object_rel"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "question_selections", force: :cascade do |t|

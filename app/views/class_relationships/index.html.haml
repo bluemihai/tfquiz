@@ -1,27 +1,23 @@
-%h1 Listing class_relationships
+%h1
+  = ClassRelationship.count
+  Class Relationships
 
-%table
-  %thead
-    %tr
-      %th Primary
-      %th Secondary
-      %th Class rel
-      %th Object rel
-      %th
-      %th
-      %th
-
-  %tbody
-    - @class_relationships.each do |class_relationship|
+.with-overflow
+  %table
+    %thead
       %tr
-        %td= class_relationship.primary_id
-        %td= class_relationship.secondary_id
-        %td= class_relationship.class_rel
-        %td= class_relationship.object_rel
-        %td= link_to 'Show', class_relationship
-        %td= link_to 'Edit', edit_class_relationship_path(class_relationship)
-        %td= link_to 'Destroy', class_relationship, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th
+        - @class_names.each do |cn|
+          %th= cn.name
 
-%br
-
-= link_to 'New Class relationship', new_class_relationship_path
+    %tbody
+      - @class_names.each_with_index do |cn, i|
+        %tr
+          %th.right= cn.name
+          - @class_names.each_with_index do |cn, j|
+            %td
+              - @cr = ClassRelationship.find_by(primary_id: i+1, secondary_id: j+1)
+              - if @cr
+                = simple_form_for(@cr, remote: true) do |f|
+                  = token_tag
+                  = f.input :class_rel, label: false, collection: ClassRelationship.labels_for_select, input_html: { onchange: "this.form.submit();"}              

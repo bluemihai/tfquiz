@@ -14,4 +14,6 @@
       = render 'layouts/messages'
       = yield
       .line-break
-      = params.inspect if Rails.env.development?
+      .admin-only
+        %hr
+        = params.inspect if Rails.env.development?

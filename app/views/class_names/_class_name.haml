@@ -1,6 +1,7 @@
 %tr
-  %td.right= class_name.name
+  %td.right= link_to class_name.name, edit_class_name_path(class_name)
   %td.left= class_name.other.name
   %td= render 'class_relationship_select', class_name: class_name
+  %td= [true, false].sample ? yes(20) : no(20)
   %td= render 'object_relationship_select', class_name: class_name
   %td.answer
